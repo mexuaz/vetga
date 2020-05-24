@@ -1,5 +1,8 @@
 # VETGA: Vectorized Toolkit for Graph Analytics
 
+[![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
+
+
 Python implementation of vectorized [K-core decompositio](https://en.wikipedia.org/wiki/Degeneracy_(graph_theory)) using [Numpy](https://github.com/numpy/numpy) and [pyTorch](https://github.com/pytorch/pytorch) libraries.
 
 
