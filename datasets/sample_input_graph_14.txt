@@ -1,0 +1,23 @@
+# sample edge list input
+# sorted
+# no self loops
+# continues integer ids
+# no dangling nodes
+# not connected
+# biderctional
+# no duplicate edges
+# no empty lines
+0	1
+1	0
+2	3
+2	4
+2	5
+3	2
+3	4
+3	5
+4	2
+4	3
+4	5
+5	2
+5	3
+5	4

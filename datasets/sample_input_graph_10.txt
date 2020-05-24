@@ -1,0 +1,22 @@
+# sample edge list input
+# sorted
+# no self loops
+# non continues ineger ids
+# no dangling nodes
+# all connected
+# directional (not biderctional)
+# contain duplicate edges
+# contain empty lines
+1	2
+2	3
+2	4
+3	4
+4	5
+4	6
+5	6
+5	7
+5	8
+6	7
+6	8
+7	8
+
