@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
     parser.set_defaults(mode="numpy")
 
-    parser.add_argument('--draw', dest='draw', action="store_true", help=("Draw the graph to a file in the same "
+    parser.add_argument('--draw', dest='draw', action="store_true", help=("Draw the graph (from a txt input) to a file in the same."
                                                                           "path as input with extension .png."))
 
     try:

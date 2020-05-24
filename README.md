@@ -1,5 +1,8 @@
 # VETGA: Vectorized Toolkit for Graph Analytics
 
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+
 [![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
 
 
@@ -19,11 +22,11 @@ For GPU Version pyTorch should be compiled using following compilers:
 * Numpy 1.18
 
 Other 3rd party libraries used in utility class are:
-* networkx
-* matplotlib
+* h5py
 * tqdm
 * requests
-* h5py
+* networkx
+* matplotlib
 
 ## Instructions to prepare GPU version of algorithim using Virtual Environment:
 
@@ -35,7 +38,7 @@ Other 3rd party libraries used in utility class are:
 
 ## Dataset files
 
-Graph data could be provided in edge list and the accepted formats are txt, npz, h5, gz. The algorithm is capable of reading files from a local disk or Google drive.
+Graph data could be provided in edge list and the accepted formats are txt, npz, h5, mtx. The application is capable of reading files from a local disk or Google drive, if the provided file is compressed by zip or gz it will be extracted automatically.
 
 Text files are the most common used format but very slow to read. It is recommended to use HDF5 as they are the best way to store and read datasets fast and there is no limitation for size (There is a 2GB limitation for npz files).
 
@@ -46,7 +49,7 @@ Some sample graphs could be found here:
 
 ## Running the algorithim
 
-* Run the algorithm
+* Running the algorithm
 	* Run the algorithm using a hdf5 file as an input, will print average K, max K and time spend.
 		* `python3 kcdapp.py ./LiveJournal.h5`
 	* Run the algorithm using a hdf5 file as an input, will also create a file that has coreness of nodes and a detail of profling the algorithm in a csv file.
@@ -56,13 +59,19 @@ Some sample graphs could be found here:
 	* Run the progrma with npz file as an input
 		* `python3 kcdapp.py "./data9_soc-LiveJournal.npz" "./data9_soc-LiveJournal-cores.txt" --mode numpy`
 		* `python3 kcdapp.py data9_soc-LiveJournal.npz data9_soc-LiveJournal-cores.txt --mode torch-gpu`
+* Converting and Pre-processing dataset files
+    * Download file from Google cloud and pre-process and save the local hdf5 dataset without running the algorithm
+        * `python3 kcdapp.py "https://drive.google.com/file/d/17L0twEBlaDjyDpR5dK-6_PJPIZP9EVwC/view?usp=sharing" --serialize-prepared --serialize=hdf5 --no-kcd`
+* Drawing the graph
+    * Draw the graph and save the image to a filename with png extension
+        * `python3 kcdapp.py ./datasets/sample_input_graph_01.txt --draw`
 
 ## Testing the algorithm correctness
 
 Following shell command will run the unit tests for the sample graphs in the datasets folder.
 
 ```shell
-python3 tests.py
+python3 tests.py 
 ```
 
 ## Contributing
@@ -114,8 +123,8 @@ optional arguments:
   -m {numpy,torch-cpu,torch-gpu}, --mode {numpy,torch-cpu,torch-gpu}
                         Perform choice to run the main algorithm on
                         Numpy/Torch(CPU/GPU).
-  --draw                Draw the graph to a file in the same path as input
-                        with extension .png.
+  --draw                Draw the graph (from a txt input) to a file in the
+                        same.path as input with extension .png.
 
 ```
 
