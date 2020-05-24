@@ -8,15 +8,15 @@ Python implementation of vectorized [K-core decompositio](https://en.wikipedia.o
 
 ## Required softwares
 Main requirements are:
-* Python 3.8.3 or later
-* Numpy 1.18.2 or later
+* Python 3.7.0 or later
+* Numpy 1.18.1 or later
 
 For GPU Version pyTorch should be compiled using following compilers:
 * Intel 2016.4
 * Torch 20171030
 * Cuda 8.0.44 (For GPU Version)
 * Python 3.7.0
-* Numpy 1.17
+* Numpy 1.18
 
 Other 3rd party libraries used in utility class are:
 * networkx
