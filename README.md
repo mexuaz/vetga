@@ -7,12 +7,14 @@ Python implementation of vectorized [K-core decompositio](https://en.wikipedia.o
 Main requirements are:
 * Python 3.8.3 or later
 * Numpy 1.18.2 or later
+
 For GPU Version pyTorch should be compiled using following compilers:
 * Intel 2016.4
 * Torch 20171030
 * Cuda 8.0.44 (For GPU Version)
 * Python 3.7.0
 * Numpy 1.17
+
 Other 3rd party libraries used in utility class are:
 * networkx
 * matplotlib
@@ -42,11 +44,11 @@ Some sample graphs could be found here:
 ## Running the algorithim
 
 * Run the algorithm
-	* Run the algorithm using a hdf file as an input, will print average K, max K and time spend.
+	* Run the algorithm using a hdf5 file as an input, will print average K, max K and time spend.
 		* `python3 kcdapp.py ./LiveJournal.h5`
-	* Run the algorithm using a hdf file as an input, will also create a file that has coreness of nodes and a detail of profling the algorithm in a csv file.
+	* Run the algorithm using a hdf5 file as an input, will also create a file that has coreness of nodes and a detail of profling the algorithm in a csv file.
 		* `python3 kcdapp.py ./amazon.h5 -o=amazon-cores.h5 -v=2 -m=numpy -p=stat.csv`
-	* Run the algorithim from text file
+	* Run the algorithim using a text input file
 	* `python3 kcdapp.py ./LiveJournal.txt`
 	* Run the progrma with npz file as an input
 		* `python3 kcdapp.py "./data9_soc-LiveJournal.npz" "./data9_soc-LiveJournal-cores.txt" --mode numpy`
@@ -62,7 +64,7 @@ python3 tests.py
 
 ## Contributing
 
-Contributions are welcome thru pull requests.
+Contributions are welcome by submiting pull requests.
 
 ## Program usage guide
 ```
